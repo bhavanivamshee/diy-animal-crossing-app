@@ -1,0 +1,11 @@
+<h1> Enter your materials for the DIY </h1>
+
+<%= form_with model: @materials do |f|%>
+    <%=f.label "name"%>
+    <%=f.text_field(:name)%>
+    <%=f.label "count"%>
+    <%=f.number_field(:count)%>
+    <%=f.label "diy"%>
+    <%=f.collection_select :diy_id, Diy.all, :id, :name %>
+    <%=f.submit("Save")%>
+    <%end%>

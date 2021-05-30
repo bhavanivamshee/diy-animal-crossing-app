@@ -26,6 +26,8 @@ ActiveRecord::Schema.define(version: 2021_05_26_181708) do
   end
 
   create_table "materials", force: :cascade do |t|
+    t.string "diy_name"
+    t.boolean "complete"
     t.string "name"
     t.integer "count"
     t.bigint "user_id", null: false

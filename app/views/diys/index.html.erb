@@ -1,5 +1,7 @@
+<h1> All the Diys!!! </h1> 
+
 <% @diys.each do |diy| %>
 
-    <%= diy.name %>
+   <li><%= link_to(diy.name, "/diys/#{diy.id}")%></li>
     <br>
     <% end %>

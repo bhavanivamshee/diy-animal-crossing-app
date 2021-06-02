@@ -2,6 +2,5 @@
 
 <% @diys.each do |diy| %>
 
-   <li><%= link_to(diy.name, "/diys/#{diy.id}")%></li>
-    <br>
-    <% end %>
+   <li><%= link_to(diy.name, diy_path(diy))%></li>
+<%end%>

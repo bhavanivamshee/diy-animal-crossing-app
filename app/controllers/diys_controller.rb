@@ -9,9 +9,38 @@ class DiysController < ApplicationController
         @get_materials = get_materials
     end
 
+    def new
+        @diy = Diy.new
+    end
+
+    def create
+        diy = Diy.create(diy_params)
+        redirect_to diys_path
+    end
+
+    def edit
+        @diy = Diy.find_by(id: params[:id])
+    end
+
+    def update
+        @diy = Diy.find_by(id: params[:id])
+        @diy.update(diy_params)
+        redirect_to diys_path
+    end
+
+    def destroy
+        diy = Diy.find_by(id: params[:id])
+        diy.delete
+        redirect_to diys_path
+    end
+
 end
 
 private
+
+def diy_params
+    params.require(:diy).permit(:name)
+end
 
 def get_materials
     @diy.materials_diy.each do |s|

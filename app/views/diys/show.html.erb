@@ -10,6 +10,8 @@
     <% end %>
 <% end %>
 
+<%=link_to "Edit", edit_diy_path(@diy)%>
 <br>
+<%=link_to("Delete", @diy, method: :delete, data:{confirm: "Do you really want to delete this?"})%>
 <br>
 

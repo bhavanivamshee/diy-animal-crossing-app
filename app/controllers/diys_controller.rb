@@ -14,8 +14,12 @@ class DiysController < ApplicationController
     end
 
     def create
-        diy = Diy.create(diy_params)
+        @diy = Diy.new(diy_params)
+        if @diy.save
         redirect_to diys_path
+        else
+            render :new
+        end
     end
 
     def edit

@@ -1,5 +1,9 @@
 <h1> Add a DIY to the list </h1>
 
+<% @errors && @errors.each do |e| %>
+<ul> <%= e %> </ul>
+<% end %>
+
 <%= form_for(@diy) do |f| %>
 <%= f.label "Diy name:" %>
 <%= f.text_field(:name) %>

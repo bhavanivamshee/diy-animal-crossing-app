@@ -18,6 +18,7 @@ class DiysController < ApplicationController
         if @diy.save
         redirect_to diys_path
         else
+            @errors = @diy.errors.full_messages
             render :new
         end
     end
